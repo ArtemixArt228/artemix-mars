@@ -1,0 +1,19 @@
+@mixin card {
+  width: 100%;
+  border: 2px solid #0f0e17;
+  text-align: center;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cameraCard {
+  @include card;
+  color: #a7a9be;
+}
+
+.activeCameraCard {
+  @include card;
+  color: #fffffe;
+  background-color: #0f0e17;
+}

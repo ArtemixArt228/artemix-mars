@@ -1,0 +1,10 @@
+.boxRover {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 20px 10px;
+  border: 5px solid #e53170;
+  border-radius: 10px;
+}

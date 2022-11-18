@@ -1,0 +1,68 @@
+.card {
+  background-color: #fffffe;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: #2e2f3e;
+  cursor: pointer;
+
+  & div:not(:last-child)  {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      color: #c3f0ca;
+    }
+
+    .complete {
+      color: #f25f4c;
+    }
+  }
+}
+
+.photos {
+  margin-top: 3rem;
+  text-align: center;
+  letter-spacing: 1.25px;
+
+  span {
+    color: #e53170;
+    font-weight: bold;
+  }
+}
+
+.datesDiv {
+  margin-top: 2rem;
+  border-radius: 0 0 10px 10px;
+  padding: 5px;
+  background-color: #0f0e17;
+  font-size: 14px;
+  color: #a7a9be;
+  text-align: center;
+  letter-spacing: 1.25px;
+
+  span {
+    color: #ff8906;
+    font-weight: bold;
+  }
+}
+
+.activeCard {
+  background-color: #8bd3dd;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: #2e2f3e;
+  cursor: pointer;
+
+  & div:not(:last-child)  {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      color: #c3f0ca;
+    }
+
+    .complete {
+      color: #f25f4c;
+    }
+  }
+}
