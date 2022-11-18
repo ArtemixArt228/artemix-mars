@@ -8,6 +8,8 @@ import Loader from "../loader";
 import s from "./index.module.scss";
 import PhotoCard from "./photoCard";
 
+import NoPhotographyIcon from "@mui/icons-material/NoPhotography";
+
 const Gallery = () => {
   const PHOTOS_PER_CLICK = 10;
 
@@ -27,22 +29,34 @@ const Gallery = () => {
 
   return (
     <>
-      <div className={s.photoContainer}>
-        {photos?.length < 11
-          ? photos?.map((image: any) => <PhotoCard key={image.id} {...image} />)
-          : photos
-              ?.slice(0, photosRange)
-              .map((image: any) => <PhotoCard key={image.id} {...image} />)}
-      </div>
-      {photos?.length > 10 && photosRange < data?.length && (
-        <button
-          className={s.loadMore}
-          onClick={() =>
-            setPhotosRange((prevValue) => prevValue + PHOTOS_PER_CLICK)
-          }
-        >
-          Load More
-        </button>
+      {data?.length !== 0 ? (
+        <>
+          <div className={s.photoContainer}>
+            {photos?.length < 11
+              ? photos?.map((image: any) => (
+                  <PhotoCard key={image.id} {...image} />
+                ))
+              : photos
+                  ?.slice(0, photosRange)
+                  .map((image: any) => <PhotoCard key={image.id} {...image} />)}
+          </div>
+          {photos?.length > 10 && photosRange < data?.length && (
+            <button
+              className={s.loadMore}
+              onClick={() =>
+                setPhotosRange((prevValue) => prevValue + PHOTOS_PER_CLICK)
+              }
+            >
+              Load More
+            </button>
+          )}
+        </>
+      ) : (
+        <div className={s.noPhoto}>
+          <p>There are no photos</p>
+          <p>Try to change Camera or Sol</p>
+          <NoPhotographyIcon style={{ fontSize: "50px" }} />
+        </div>
       )}
     </>
   );

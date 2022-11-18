@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Slider, Box } from "@mui/material";
 
@@ -14,6 +14,10 @@ const SliderSol = () => {
 
   const { setSol } = useActions();
 
+  useEffect(() => {
+    setCountSol(sol);
+  }, [sol]);
+
   return (
     <>
       <h3 style={{ marginTop: "20px" }}>Choose a Sol</h3>
@@ -26,6 +30,15 @@ const SliderSol = () => {
         }}
       >
         <button
+          style={{
+            cursor: "pointer",
+            width: "50px",
+            height: "50px",
+            background: "#f25f4c",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
           onClick={() => {
             setSol(sol - 1);
             setCountSol((prevValue: number) => prevValue - 1);
@@ -35,8 +48,17 @@ const SliderSol = () => {
         </button>
         <p style={{ fontSize: "22px" }}>{countSol}</p>
         <button
+          style={{
+            cursor: "pointer",
+            width: "50px",
+            height: "50px",
+            background: "#f25f4c",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
           onClick={() => {
-            setSol(sol - 1);
+            setSol(sol + 1);
             setCountSol((prevValue: number) => prevValue + 1);
           }}
         >
@@ -51,6 +73,7 @@ const SliderSol = () => {
       >
         <p>0</p>
         <Slider
+          value={sol}
           style={{
             color: "#e53170",
             margin: "10px 30px",
@@ -59,7 +82,6 @@ const SliderSol = () => {
             setSol(e!.target!.value);
             setCountSol(e!.target!.value);
           }}
-          defaultValue={sol}
           aria-label="Default"
           valueLabelDisplay="auto"
           max={max_sol}

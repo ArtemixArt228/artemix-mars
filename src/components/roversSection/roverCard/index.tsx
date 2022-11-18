@@ -15,7 +15,7 @@ const RoverCard = ({
   clickedCard,
   setClickedCard,
 }: any) => {
-  const { setGeneralInfo } = useActions();
+  const { setGeneralInfo, setSol } = useActions();
 
   return (
     <article
@@ -23,6 +23,7 @@ const RoverCard = ({
       onClick={() => {
         setClickedCard(name);
         setGeneralInfo({ rover: name, max_sol, cameras });
+        setSol(0);
       }}
     >
       <div>

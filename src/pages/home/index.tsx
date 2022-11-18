@@ -2,8 +2,8 @@ import React from "react";
 
 import s from "./index.module.scss";
 
-import mars from "../../assets/mars-18176.png";
-import rover from "../../assets/rover.png";
+import mars from "/assets/mars-18176.png";
+import rover from "/assets/rover.png";
 
 import { Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
