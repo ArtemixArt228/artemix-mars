@@ -11,6 +11,7 @@ import { Box } from "@mui/material";
 
 const View = () => {
   const { rover, sol, camera } = useAppSelector((store) => store.mars);
+  console.log(rover && sol !== 0 && camera);
 
   return (
     <Box maxWidth="1200px" marginX="auto" padding={3}>

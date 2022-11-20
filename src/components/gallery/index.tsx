@@ -4,6 +4,7 @@ import { useLazyGetPhotosQuery } from "../../redux/services/mars";
 import { useAppSelector } from "../../hooks/redux";
 
 import Loader from "../loader";
+import Error from "../../pages/error";
 
 import s from "./index.module.scss";
 import PhotoCard from "./photoCard";
@@ -20,11 +21,16 @@ const Gallery = () => {
 
   useEffect(() => {
     setPhotos(data);
+    setPhotosRange(10);
     loadPhotos({ rover, sol, camera });
   }, [isLoading, camera, sol, data]);
 
   if (isLoading) {
     return <Loader />;
+  }
+
+  if (isError) {
+    return <Error />;
   }
 
   return (

@@ -3,6 +3,7 @@ import React from "react";
 import { useActions } from "../../../hooks/actions";
 
 import s from "./index.module.scss";
+import { useAppSelector } from "../../../hooks/redux";
 
 const RoverCard = ({
   name,
@@ -15,7 +16,7 @@ const RoverCard = ({
   clickedCard,
   setClickedCard,
 }: any) => {
-  const { setGeneralInfo, setSol } = useActions();
+  const { setGeneralInfo, setSol, setCamera } = useActions();
 
   return (
     <article
@@ -24,6 +25,7 @@ const RoverCard = ({
         setClickedCard(name);
         setGeneralInfo({ rover: name, max_sol, cameras });
         setSol(0);
+        setCamera("");
       }}
     >
       <div>
